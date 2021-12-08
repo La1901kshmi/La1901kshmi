@@ -1,0 +1,84 @@
+body{
+    background-color:turquoise;
+}
+h1{
+    text-transform: uppercase;
+    text-align:center;
+    background-color:red;
+    color:white;
+    width:100%;
+    border:none;
+}
+.card{
+    width:250px;
+    height:335px;
+    border:2px solid black;
+    border-radius:3px;
+    margin:10px;
+    float:left;
+    margin:75px;
+    background-color:pink;
+}
+.card img{
+    height:154px;
+    width:250px;
+
+}
+.heading{
+    color:tomato;
+    text-align: center;
+    padding: 10px;
+
+}
+.descr{
+    text-align:center;
+    font-size: small;
+    color: #36486b;
+
+}
+.price{
+    float:right;
+    padding:2px;
+    color:blue;
+    margin:2px;
+}
+ .discount{
+    font-style:normal;
+    float:right;
+    color: red;
+    padding-right: 8px;
+    font-size: 10px;
+    
+   
+}
+.rating{
+    padding:10px;
+    float:left;
+}
+.rating img{
+    width:20px;
+    height:30px;
+}
+.buttons{
+    
+    float: left;
+    width: 100%;
+    text-align:center;
+}
+.buttons button{
+    width:40%;
+    font-size:12px;
+    margin-right:10px;
+    color:white;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+
+}
+.b1{
+    background-color: green;
+    
+}
+.b2{
+    background-color: red;
+}
