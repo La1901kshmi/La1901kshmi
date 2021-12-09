@@ -1,0 +1,30 @@
+.middle{
+    width: 55%;
+    margin:auto;
+   
+    
+}
+
+
+.center{
+    text-align:center;
+}
+.right{
+    text-align:right;
+}
+table{
+    border: 1px solid black;
+    border-spacing: 1px;
+  
+}
+td{
+    padding:1px;
+    border:1px solid #000000;
+}
+
+.green{
+    background-color: chartreuse;
+}
+.blue{
+    background-color: cyan;
+}
