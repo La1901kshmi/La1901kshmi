@@ -1,6 +1,12 @@
 body{
     background-color:turquoise;
 }
+.container{
+    background-color: green;
+    display: flex;
+    flex-direction:row;
+   
+}
 h1{
     text-transform: uppercase;
     text-align:center;
