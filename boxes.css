@@ -1,19 +1,33 @@
 .container{
     background-image: url("https://www2.d125.org/applied_arts/teched/courses/WEB/portfolios/2014_FallP8/Rami_Portfolio_Period8/unit4_css/project2/cssProject2/grid.png");
     width: 960px;
-    height: 820px;
+    height: 780px;
     margin: auto;
+    padding-top: 20px;
 }
 .longbox{
-    background-color: grey;
+   
     height:100px;
-    width: 960px;
+    width: 940px;
+    
+   
+}
+.box{
     opacity:0.8;
+    float: left;
+    background-color: grey;
+    
 }
 .smallbox{
-    background-color: grey;
-    height: 50px;
-    width: 40px;
-    opacity:0.8;
-    margin: 3px;
+    
+    height: 220px;
+    width: 220px;
+    margin-top:20px;
+    margin-bottom: 30px;
+}
+.ml-10{
+    margin-left: 10px;
+}
+.ml-20{
+    margin-left: 20px;
 }
