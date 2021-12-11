@@ -1,0 +1,27 @@
+body{
+    background-color: #bdcebe;
+}
+.center{
+    
+    margin:auto;
+    width: 1000px;
+}
+.middle{
+    text-align:center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+strong{
+    padding-top:4px;
+}
+.ml{
+   
+   margin-left: 10px;
+}
+.plr-10{
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+
+
