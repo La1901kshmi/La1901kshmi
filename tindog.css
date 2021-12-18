@@ -6,10 +6,11 @@ h1,h2,h3,h4,h5,h6{
     font-family: "Montserrat-Bold";
 }
 p{
-    clor: #8f8f8f;
+    color: #8f8f8f;
 }
 .big-heading{
     font-family: "Montserrat-black";
+    
     font-size: 3.5rem;
     line-height:1.5;
 }
