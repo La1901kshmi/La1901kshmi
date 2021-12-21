@@ -1,0 +1,83 @@
+body{
+    background-color: lightblue;
+    color: #4e4e4e;
+}
+
+.box-shadow-full{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.about-img{
+    margin-bottom: 2 rem;
+
+}
+img{
+    width: 160px;
+    margin-left: 10px;
+
+}
+.skills-mf span{
+   
+    background-color: white;
+    padding-left: 10px;
+}
+.progress{
+    background-color: #cde1f8;
+    margin: .5rem 0 1.2rem 0;
+    height: 0.7rem;
+    margin-left: 10px;
+}
+.progress-bar{
+    height: .7rem;
+    background-color: #0078ff;
+}
+.fs-25{
+    font-size: 25px;
+}
+.title-left{
+    font-size: 30px;
+    padding-bottom: 30px;
+  
+    
+}
+.title-left:before{
+    content: '';
+    position: absolute;
+    height:3px;
+    background-color: lightskyblue;
+    width: 100px;
+    bottom: -13px;
+}
+.title-s{
+    color: #1e1e1e;
+    font-size: 24px;
+    padding-left: 10px;
+    font-weight: 600;
+}
+.title-s1{
+    color: black;
+    font-size: 15px;
+
+}
+
+.sect-pt4{
+    padding-top: 4rem;
+}
+.box-shadow-full{
+    background-color: lightblue;
+    padding: 3rem 1.25rem;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 3rem;
+    box-shadow: 10px 10px 10px 10px rgba(211,211,211,0.5);
+
+}
+.lead{
+    font-family: 'Montaserrat';
+    font-size: 10px;
+    text-transform: capitalize;
+    font-family: 'Prompt', sans-serif;
+    color: black;
+}
+
