@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family:'Courier New', Courier, monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+
+}
+.container{
+    display: flex;
+    width: 90vw;
+}
+
+
+
+.panel{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 54px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: all 1000ms ease-in;
+
+}
+#panel-1{
+background-image: url("https://wallpaperaccess.com/full/1629987.jpg");
+}
+#panel-2{
+    background-image: url("https://coffeegroveresort.com/wp-content/uploads/2015/01/cgr-5-2.jpg");
+}
+
+#panel-3{
+    background-image: url("https://res.cloudinary.com/thrillophilia/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_auto,h_600,q_auto,w_auto/v1/filestore/p49s9z1jlcmssxwfw0z2qynpc2r6_97727e12942fa781f2d3ba295702c7f4.jpg");
+}
+#panel-4{
+    background-image: url("https://i.pinimg.com/736x/be/f0/74/bef07474b286c22b776ec06055e06314.jpg"); 
+}
+#panel-5{
+    background-image: url("https://images.pexels.com/photos/1631678/pexels-photo-1631678.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+}
+.panel h3{
+    font-size: 25px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+.panel.active{
+    flex: 5;
+}
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+   
+}
+@media (max-width: 480px){
+    .container{
+        width: 100vw;
+    }
+    #panel-4,#panel-5{
+        display: none;
+    }
+}

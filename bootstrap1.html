@@ -1,10 +1,58 @@
 <html>
     <head>
         <title>
-             java Script
+             simple operator
         </title>
         </head>
         <body>
+
+            <input type="number" placeholder="enter 1st number" id="num1">
+            <select name="operator" id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="number" placeholder="enter 2nd number" id="num2">
+            <button onClick = "CalculateSum()">=</button>
+            <input  id="result" placeholder="Result">
+           <script>
+               function CalculateSum()
+               {
+                   var x = Number(document.getElementById("num1").value)
+                   var y = Number(document.getElementById("num2").value)
+                   var z = Number(document.getElementById("operator").value)
+                   if(z == "+"){
+                       var res = x+y
+                       document.getElementById("result").value = res
+                   }
+                   else if(z == "-"){
+                       var res = x-y
+                       document.getElementById("result").value = res
+                   }
+                   else if(z == "*"){
+                       var res = x*y
+                       document.getElementById("result").value = res
+                   }
+                   else
+                   {
+                       var res = x/y
+                       document.getElementById("result").value = res
+                   }
+                   
+                }
+           </script>
+            
+               
+              
+
+
+              
+                
+               
+                
+                
+
 
         </body>
         </html>
