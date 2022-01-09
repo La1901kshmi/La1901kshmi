@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function threesum(arr,target){
+        arr.sort((a,b) => a-b)
+        let len=arr.length
+        let closestsum=1000000000
+        for(let i=0;i<len-2;i++){
+            let left=i+1;
+            let right=len-1
+
+            while(left<right){
+                let currsum=arr[i]+arr[left]+arr[right]
+                if(Math.abs(currsum-target)<Math.abs(closestsum-target))
+                closestsum=currsum
+                if(currsum>target)
+                right--
+                else
+                left++
+            }
+        }
+        return closestsum
+    }
+    
+        let arr=[1,2,3,4,-5]
+        let target=10
+        console.log(threesum(arr,target))
+    </script>
+    
+</body>
+</html>

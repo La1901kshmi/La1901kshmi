@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const lookup = {
+  'A': 'N','B': 'O','C': 'P','D': 'Q',
+  'E': 'R','F': 'S','G': 'T','H': 'U',
+  'I': 'V','J': 'W','K': 'X','L': 'Y',
+  'M': 'Z','N': 'A','O': 'B','P': 'C',
+  'Q': 'D','R': 'E','S': 'F','T': 'G',
+  'U': 'H','V': 'I','W': 'J','X': 'K',
+  'Y': 'L','Z': 'M','1': '13'
+};
+        function caesar(encodedStr){
+            const codeArr = encodedStr.split("")
+            let decodedArr = []
+            for(let i=0;i<codeArr.length;i++){
+                let char = codeArr[i]
+                if(lookup[char]===undefined){
+                    decodedArr.push(char)
+                }
+                else{
+                    decodedArr.push(lookup[char])
+                }
+            }
+                return decodedArr.join("")
+        }    
+        console.log(caesar("ABCD 542? 11" ))
+        
+    </script>
+</body>
+</html>
