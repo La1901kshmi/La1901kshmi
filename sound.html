@@ -1,0 +1,75 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sounds</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: chartreuse;
+            margin:0;
+            display:flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+        .btn{
+            background-color: green;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            margin: 1rem;
+            padding: 1.5rem 3rem;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .btn:focus{
+            outline:0;
+        }
+        .btn:hover{
+            opacity: 0.9;
+        }
+        
+    </style>
+</head>
+<body>
+   <audio src="sound/applause.mp3.mp3"  id="applause" ></audio>
+    <audio src="sound/boo.mp3.mp3" id="boo"></audio>
+    <audio src="sound/gasp.mp3.mp3"  id="gasp"></audio>
+   
+    <audio src="sound/tada.mp3.mp3"  id="tada"  ></audio>
+    <audio src="sound/victory.mp3.mp3"  id="victory"></audio>
+    <audio src="sound/wrong.mp3.mp3"   id="wrong"></audio>
+    <div id="buttons"></div>
+    <script>
+    const sounds = ["applause","boo","gasp","tada","victory","wrong"] 
+    sounds.forEach(sound=>{
+        const btn = document.createElement("button")
+        btn.classList.add("btn")
+        btn.innerText=sound
+        btn.addEventListener('click',()=>{
+            stopPlaying()
+            document.getElementById(sound).play()
+        })
+        document.getElementById("buttons").append(btn)
+    })
+
+    function stopPlaying(){
+    sounds.forEach(sound=>{
+        const audio= document.getElementById(sound)
+
+        audio.pause()
+        audio.currentTime=0
+    })
+}
+    
+    </script>
+</body>
+</html>
