@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color board</title>
+    <link rel="stylesheet" href="coloredbox.css">
+    
+</head>
+<body>
+    <div id="container" class="container"></div>
+    <script>
+        const colors=["red","blue","white","pink","green","yellow"]
+        const container=document.getElementById("container")
+        const squares=400
+
+        for(let i=0;i<squares;i++){
+        const square=document.createElement("div")
+        square.classList.add("square")
+        container.appendChild(square)
+        }
+        function randomColor(){
+            const index=Math.floor(Math.random()*colors.length)
+            return colors[index]
+        }
+    </script>
+    
+</body>
+</html>

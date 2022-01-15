@@ -36,11 +36,11 @@
         .btn:hover{
             opacity: 0.9;
         }
-        
+
     </style>
 </head>
 <body>
-   <audio src="sound/applause.mp3.mp3"  id="applause" ></audio>
+<audio src="sound/applause.mp3.mp3"  id="applause" ></audio>
     <audio src="sound/boo.mp3.mp3" id="boo"></audio>
     <audio src="sound/gasp.mp3.mp3"  id="gasp"></audio>
    
@@ -49,7 +49,7 @@
     <audio src="sound/wrong.mp3.mp3"   id="wrong"></audio>
     <div id="buttons"></div>
     <script>
-    const sounds = ["applause","boo","gasp","tada","victory","wrong"] 
+  const sounds = ["applause","boo","gasp","tada","victory","wrong"] 
     sounds.forEach(sound=>{
         const btn = document.createElement("button")
         btn.classList.add("btn")
@@ -69,6 +69,9 @@
         audio.currentTime=0
     })
 }
+   
+
+ 
     
     </script>
 </body>

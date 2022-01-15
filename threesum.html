@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-        function threesum(arr,target){
+     function threesum(arr,target){
         arr.sort((a,b) => a-b)
         let len=arr.length
         let closestsum=1000000000
@@ -32,6 +32,17 @@
         let arr=[1,2,3,4,-5]
         let target=10
         console.log(threesum(arr,target))
+
+       /* arr=[2,3,1,5,4]
+
+        function iWillUseThisShortlyForIterating(value,index){
+            console.log(index+ '-' +value)
+        }
+
+        arr.forEach(function (value,index){
+            console.log(index+ '-' +value)
+        })*/
+        
     </script>
     
 </body>
