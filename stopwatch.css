@@ -1,0 +1,51 @@
+body{
+    background-color: green;
+    color:#fff;
+}
+h1{
+    font-size: 48px;
+    font-weight: 200;
+    text-align: center;
+    padding: 0 60px;
+    margin: 0;
+}
+.stopwatch{
+    display: grid;
+    justify-items: center;
+    grid-row-gap: 25px;
+    width: 100%;
+    padding-top: 25px;
+}
+.circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    border: 2px double yellowgreen;
+    border-radius: 50%;
+}
+.time{
+    font-weight:300;
+    font-size: 48px;
+}
+.controls{
+    display:flex;
+    justify-content: space-between;
+    width: 200px;
+}
+button{
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#playButton{
+    display:block;
+}
+#pauseButton{
+    display: none;
+}
