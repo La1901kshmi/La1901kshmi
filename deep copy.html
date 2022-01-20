@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          const shraddha={
+            name: 'shraddha',
+            batch: 'batch11',
+            teckstack: 'mern',
+          }
+   
+
+     //   const shraddha2={
+       //     ...shraddha
+        //}
+        
+      //  shraddha2.batch="batch12"
+       // shraddha2.city="dvg"
+     //   console.log(shraddha2)
+     //   console.log(shraddha)
+     
+        const address={
+            city: 'mumbai',
+            state: 'maharastra',
+            country: 'india',
+
+        }
+        console.log(Object.entries(address))
+     /*   const shraddha2={
+            name: 'shraddha',
+            batch: 'batch11',
+            teckstack: 'mern',
+            address:{
+                ...address
+
+            }
+
+        }
+        const mergedObjects={
+            ...shraddha,...address
+        }
+      
+      
+      console.log(mergedObjects)
+       let x='hello world'
+       console.log(x.includes('a'))*/
+    /* let firstName='shivam'
+      let lastName='doundiyal'
+
+      let shivam={
+          firstName,
+          lastName,
+      }
+      console.log(shivam)
+     /* let randomObject={
+          abc: 'abc',
+          def:'def'
+
+      }
+      let randomObject2=Object.assign({},randomObject)
+      randomObject2.abc='xyz'
+      console.log(randomObject)
+
+     /* let amber={
+          name:'amber',
+          batch:'batch11',
+          teckstack:'mern',
+          address: {
+              city:'dvg',
+              state: {
+                  north:'ut',
+                 
+              }
+          }
+      }*/
+     // let {name,batch,teckstack,address:{city,state},state:{north}}=amber
+     //console.log(name,batch,teckstack,city,state,north)
+ //  console.log(amber.name,amber.batch)
+ //let arr=[1,2,3]
+// let[first,second,third]=arr
+// console.log(first+second+third)
+
+
+let inputArray = [
+      {name: 'Amber', batch: 'Batch 12', likesIceCream: false},
+      {name: 'Pratik', batch: 'Batch 12', likesIceCream: true},
+      {name: 'Charan', batch: 'Batch 11', likesIceCream: false},
+      {name: 'Dhanashree', batch: 'Batch 12', likesIceCream: true},
+      {name: 'Anirban', batch: 'Batch 10', likesIceCream: false},
+    ]
+ 
+ let studentlikeicecream=inputArray.filter(function(element)
+ {
+     return element.likesIceCream===true
+ })
+ console.log(studentlikeicecream)
+
+
+    </script>
+</body>
+</html>
