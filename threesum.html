@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-     function threesum(arr,target){
+   /*  function threesum(arr,target){
         arr.sort((a,b) => a-b)
         let len=arr.length
         let closestsum=1000000000
@@ -27,11 +27,11 @@
             }
         }
         return closestsum
-    }
+    }*/
     
-        let arr=[1,2,3,4,-5]
-        let target=10
-        console.log(threesum(arr,target))
+       // let arr=[1,2,3,4,-5]
+      //  let target=10
+      //  console.log(threesum(arr,target))
 
        /* arr=[2,3,1,5,4]
 
@@ -42,7 +42,25 @@
         arr.forEach(function (value,index){
             console.log(index+ '-' +value)
         })*/
-        
+      /*  function abc(){
+            let y=10
+            return function(){
+                return y
+            }
+        }
+        console.log(abc()())*/
+        function abc(a,...rest){
+            console.log(rest)
+        }
+        abc('saikrishna','suvarchala','nandu')
+
+        function abc(def){
+            console.log('hi')
+            function def(){
+                return y
+            }
+        }
+        console.log(abc())
     </script>
     
 </body>

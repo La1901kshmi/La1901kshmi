@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-      function major(nums,n)
+     /* function major(nums,n)
         {
             let requiredFrequency = Math.floor(n/2)+1
             let store={}
@@ -25,13 +25,26 @@
         }
     }
       let nums=[1,1,3,4,1,1]
-        console.log(major(nums,nums.length))
-         
+        console.log(major(nums,nums.length))*/
 
-
-
+        let inputArray = [
+      {name: 'Amber', batch: 'Batch 12', likesIceCream: false},
+      {name: 'Pratik', batch: 'Batch 12', likesIceCream: true},
+      {name: 'Charan', batch: 'Batch 11', likesIceCream: false},
+      {name: 'Dhanashree', batch: 'Batch 12', likesIceCream: true},
+      {name: 'Anirban', batch: 'Batch 10', likesIceCream: false},
+    ]
+     let studentlikeicecream=inputArray.filter(function (element){
+     if(element.likesIceCream===true)
+     })
+     let studentnamewholikeicecream=studentlikeicecream.map(element=>{
+      if(element.name==batch12)
+       return element.name
+      })
+    
+     
         
 
         </script>
 </body>
-</html>
+</html

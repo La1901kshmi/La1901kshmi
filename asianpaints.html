@@ -1,0 +1,77 @@
+<html>
+  <head>
+   <style>
+       .grid-container {
+  display: grid;
+  margin: 20px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.698);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+   </style>
+  </head>
+
+  <body>
+   
+    <input type="text" placeholder="enter block id" id="block_id">
+    <input type="text" placeholder="enter colour id" id="colour_id"> 
+    <button id="change_button">Change</button>
+    <button id="reset_button">Reset</button>
+    <div class="grid-container">
+      <div class="grid-item" id="1">1</div>
+      <div class="grid-item" id="2">2</div>
+      <div class="grid-item" id="3">3</div>
+      <div class="grid-item" id="4">4</div>
+      <div class="grid-item" id="5">5</div>
+       <div class="grid-item" id="6">6</div>
+      <div class="grid-item" id="7">7</div>
+        <div class="grid-item" id="8">8</div>
+        <div class="grid-item" id="9">9</div>
+          </div>
+   
+ <script>
+        
+const reset=document.getElementById("reset_button")
+const change=document.getElementById("change_button")
+
+reset.addEventListener("click",resetGrid)
+change.addEventListener("click",changeColor)
+
+function resetGrid(){
+  for(let i=1;i<=9;i++)
+  {
+    const gridItem=document.getElementById(i)
+    gridItem.style.backgroundColor='transparent'
+  }
+}
+
+function changeColor(){
+  const blockId=document.getElementById("block_id")
+  const colorId=document.getElementById("colour_id")
+  
+   if(!blockId.value){
+     alert("please enter block id")
+   }
+   if(!colorId.value){
+     alert("please enter colour id")
+   }
+   resetGrid()
+    const gridItem=document.getElementById(blockId.value)
+    gridItem.style.backgroundColor=colorId.value
+    
+    blockId.value=""
+    colorId.value=""
+
+  }
+
+    </script>
+  </body>
+</html>
