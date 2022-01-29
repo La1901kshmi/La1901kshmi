@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="baloon.css">
+</head>
+<body>
+    <div class="balloon-container">
+        <h1>POP THE BALLONS BY MOVING
+        <br>
+        YOUR  MOUSE OVER THEM
+        </h1>
+    </div>
+        <div class="zero-balloon">
+            <span class="blue">Wow!</span>All balloons popped!
+        </div>   
+        <script>
+        const container=document.querySelector(".balloon-container")
+        const numBallons=30
+        let popped=0
+        for(let i=1;i<=numBallons;i++)
+        {
+            const divEl=document.createElement("div")
+            divEl.classList.add("balloon")
+            divEl.innerText="POP!"
+            const randColor=getColor()
+            divEl.style.backgroundColor=`${randColor}`
+            divEl.style.color=`${randColor}`
+
+            divEl.addEventListener("mouseenter",function(){
+                if(divEl.style.backgroundColor!=="transparent"){
+                    popped++
+                }
+                console.log(popped)
+                divEl.style.backgroundColor="transparent"
+                checkAllPopped()
+            })
+            container.appendChild(divEl)
+        }
+
+        function checkAllPopped(){
+            if(popped===25){
+             console.log("all popped")
+             let message=document.querySelector(".zero-balloon")
+             message.style.display="block"
+             container.innerHTML=''
+            }
+        }
+
+        function getColor(){
+            function color(){
+                let hex=random(255).toString(16)
+                return hex.padStart(2,"0")
+            }
+            return "#"+color()+color()+color()
+
+            }
+        
+
+            function random(number){
+                let val=Math.floor(Math.random()*number)
+                return val
+            }
+        </script>
+</body>
+</html>
