@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let a
+      //  console.log(a?'Goa':'Manali')
+      /*  var x=5
+        {
+            var x=10
+          
+
+        }
+        console.log(x)*/
+        //let b='eat'*3
+        //console.log(b)
+      /*  const numbers=[45,89,40,3,4]
+        
+        
+        numbers.forEach(function sumofallno(item,index){
+        console.log(item+10)
+
+        })*/
+    // arr=[8,17,9,9,19,56,80]
+      /* let newArray=arr.filter(function (e,index){
+           return arr.indexOf(e)==arr.lastIndexOf(e)
+       })
+       console.log(newArray)*/
+     // let greaterthan9=arr.reduce((element)=> element++)
+     // console.log(greaterthan9)
+     
+/*const executeOrder=function(){
+ return new Promise(function(resolve,reject){
+  console.log('order placed')
+  setTimeout(function(){
+    console.log("order received")
+    console.log('chef started preparing')
+    resolve()
+},2000)
+})
+}
+
+const pizzacheezeadded=()=>{
+ return  new Promise(function(resolve,reject){
+    setTimeout(function(){
+    console.log('pizza cheeze added')
+    resolve()
+    },5000)
+  })
+}
+const firstlayercheezeadded=()=>{
+  return new Promise(function(resolve,reject){
+    setTimeout(function(){
+    console.log('first layer of cheeze added')
+    resolve()
+    },4000)
+  })
+}
+
+
+const toppingadded=()=>{
+  return new Promise(function(resolve,reject){
+    setTimeout(function(){
+    console.log('topping added')
+    resolve()
+    },2000)
+  })
+}
+
+const finallayer=()=>{
+return  new Promise(function(resolve,reject){
+    setTimeout(function(){
+    console.log('final layer added')
+    resolve()
+    },6000)
+  })
+}
+
+const pizzbaked=()=>{
+ return  new Promise(function(resolve,reject){
+  setTimeout(function(){
+  console.log('pizza baked')
+  resolve()
+},4000)
+  })
+}
+
+const organoadded=()=>{
+ return new Promise(function(resolve,reject){
+    setTimeout(function(){
+    console.log('organ added and packed')
+    resolve()
+},4000)
+})
+} 
+
+//executeOrder() 
+.then(pizzacheezeadded)
+.then(firstlayercheezeadded)
+.then(toppingadded)
+ .then(finallayer)
+ .then(pizzbaked)
+ .then(organoadded)
+ .then(function(){
+  console.log('the order is ready and handed over the zomato guy')
+  
+})*/
+
+
+
+
+
+     // let arr=[30000,1000,50000,20000,40000]
+   //   let str=arr.toString()
+     // let str1=str.slice(0,1)
+     
+     /* const arr1=arr.map(function(value){
+       
+        if(Number(String(value)[0]%2==0)){
+         
+          value+=value*20/100
+          return value
+        }
+      else 
+        {
+        value+=value*35/100
+        return value
+        }
+      })
+      
+    console.log(arr1)*/
+   /* let x=4
+    let y=5
+
+    let promise = new Promise(function(resolve,reject){
+     if(x===y)
+     resolve('the value of x and y are equal')
+     else if(x>y)
+     resolve('the valueof x is greater than y')
+     else
+     reject('the value of x is lesser than y')
+    })
+    promise.then(function(resolvedmessage){
+      console.log('this was resolved,with the message-',resolvedmessage)
+    }).catch(function(rejectedmessage){
+      console.log('this was rejected,with the message-',rejectedmessage)
+    })*/
+   /* let promise = new Promise(function(resolve,reject){
+      setTimeout(function(){
+        resolve('finally this was resolved after 5 sec')
+      },5000)
+    })
+    console.log(promise)
+    promise.then(function(resolvedmessage){
+      console.log('this was resolved,with the message-',resolvedmessage)
+      
+    }).catch(function(rejectedmessage){
+      console.log('this was rejected,with the message-',rejectedmessage)
+    })*/
+  
+    /* const fetchprofileinformation=function(){
+       return new Promise(function(resolve,reject){
+         console.log('fetching information')
+         setTimeout(function(){
+        resolve('it take 5sec to load')
+      },5000)
+    })
+  }
+ 
+  fetchprofileinformation().then(function(resolvedmessage){
+    console.log('this was resolved,with the message-',resolvedmessage)
+  })*/
+    
+   
+    
+   
+  //  let arr=[1,3,5,2,0] 
+   // let arr=[3,4,6,0,1,2]
+   // let sum=0
+    //for(let i=0;i<arr.length;i++){
+      //sum+=arr[i]
+    //}
+    //sumtotal=arr.length*(arr.length+1)/2
+    
+    //console.log(sumtotal-sum)
+  /*  let arr=[1,5,3,0] 
+   // let arr=[3,4,6,0,1,2]
+    let sum=0
+    for(let i=0;i<arr.length;i++){
+      sum+=arr[i]
+    }
+    let n=5
+    sumtotal=n*(n+1)/2
+    
+    let avg=((sumtotal-sum)/2)+1
+    console.log(Math.floor(avg))
+    console.log(Math.ceil(avg))*/
+
+   /*  let studentData=[
+       {name: 'prajakta'
+       ,batch: 'batch11'
+       },
+       {name: 'pratik'
+       ,batch: 'batch12'
+       }]
+     const getstudentData=()=>{
+       return new Promise((resolve,reject)=>{
+        console.log('fetching student data')
+        setTimeout(()=>{
+         console.log('data fetched successfully')
+         resolve(studentData)
+        },4000)
+       })
+     }
+    // getstudentData().then(function(studentData){
+     //  console.log(studentData)
+    // })
+     getstudentData().then(function(studentData){
+       return studentData.filter(student=>{
+         return student.batch==='batch12'
+         
+     })
+    }).then(function(student){
+      console.log(student[0].name)
+    })*/
+    /*let promise=new Promise(function(resolve,reject){
+      resolve('A')
+    })
+    promise.then(function(resolvedmessage){
+     return  resolvedmessage+ 'B'
+    }).then (function (updatedmessage){
+       return updatedmessage+ 'c'
+    }).then (function(updatedmessage){
+      console.log(updatedmessage)
+
+    })*/
+
+ /*let students = [
+      {
+        name: 'John',
+        batch: 'Batch 11',
+        marks: {
+          english: '38',
+          maths: '72',
+          science: '82',
+          hindi: '21',
+          social: '48',
+        }
+      },
+      {
+        name: 'Sita',
+        batch: 'Batch 12',
+        marks: {
+          english: '74',
+          maths: '82',
+          science: '32',
+          hindi: '42',
+          social: '28',
+        }
+      },
+      {
+        name: 'Shyam',
+        batch: 'Batch 13',
+        marks: {
+          english: '28',
+          maths: '92',
+          science: '63',
+          hindi: '81',
+          social: '61',
+        }
+      }]*/
+
+
+
+      let students = [
+      {
+        name: 'John',
+        batch: 'Batch 11',
+        marks: {
+          english: '38',
+          maths: '72',
+          science: '82',
+          hindi: '21',
+          social: '48',
+        }
+      },
+      {
+        name: 'Sita',
+        batch: 'Batch 12',
+        marks: {
+          english: '74',
+          maths: '82',
+          science: '32',
+          hindi: '42',
+          social: '28',
+        }
+      },
+      {
+        name: 'Shyam',
+        batch: 'Batch 13',
+        marks: {
+          english: '28',
+          maths: '92',
+          science: '63',
+          hindi: '81',
+          social: '61',
+        }
+      },
+      {
+        name:'Lakshman',
+        batch:'Batch14',
+        marks:{
+          english:'48',
+          maths:'83',
+          science:'63',
+          hindi:'71',
+          social:'63'
+        }
+      }
+    ]
+   /* let studentsTotalMarks=students.map((student)=>{
+    for(subject in student.marks){
+    let greaterthan30marksinallsubj=students.filter(function(subject){
+      if(Number(subject)>30)
+        return student.name
+      })
+    }
+  })*/
+  
+      
+    
+   let studentsTotalMarks=students.map((student)=>{
+      
+     
+         for(marks in student.marks){
+         if(Number(student.marks)>30){
+           return student
+         }
+        
+      }
+   })
+   
+   console.log(studentsTotalMarks)
+  
+
+
+  /* let studentsTotalMarks=students.map((student)=>{
+     let{english,maths,science,hindi,social}=student.marks
+     return Number(english)+Number(maths)+Number(science)+Number(hindi)+Number(social)
+   })*/
+
+
+  /* let studentsTotalMarks=students.map((student)=>{
+     let marks=Object.values(student.marks)
+     return marks.reduce((total,singlemarks)=>{
+       return total+Number(singlemarks)
+     },0)
+   })*/
+  
+   // console.log(studentsTotalMarks)
+ //  console.log(students1)
+  // console.log(marks.values(students))
+ /* let arr=[1,3,5,2,0]
+  let n=arr.length
+  arr.sort((a,b)=>a-b)
+  let i 
+    for(i=0;i<n;i++){
+     if(arr[i]==i){
+     break
+    }
+  }
+    console.log(i)*/
+
+   /* let promise1=new Promise(function(resolve,reject){
+      setTimeout(function(){
+        resolve('resolving promise1')
+      }, 5000)
+    })
+
+    let promise2=new Promise(function(resolve,reject){
+      setTimeout(function(){
+        resolve('resolving promise2')
+      }, 4000)
+    })
+    
+    let promise3=new Promise(function(resolve,reject){
+      setTimeout(function(){
+        resolve('resolving promise3')
+      }, 3000)
+    })
+
+   
+  Promise.any([promise1,promise2,promise3]).then((resolvedmessage) => {
+    console.log('some of the promises resolved',resolvedmessage)
+  })*/
+ 
+
+    </script>
+</body>
+</html>
