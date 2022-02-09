@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style-type: none;
+            box-sizing: border-box;
+
+        }
+      nav{
+          background: burlywood;
+          height: 80px;
+          width: 100%;
+      }
+      label.logo{
+          color: aliceblue;
+          font-size: 30px;
+          line-height: 80px;
+          padding: 0 100px;
+          font-weight: bold;
+      }
+     nav ul{
+         float:right;
+         margin-right: 20px;
+     }
+     nav ul li{
+         display: inline-block;
+         line-height: 80px;
+         margin: 0 5px
+     }
+     nav ul li a{
+         color: white;
+         font-size: 20px;
+         padding: 7px 13px;
+         text-transform: uppercase;
+         border-radius: 3.5px;
+         width: 30%;
+     }
+     a.active,a:hover{
+         background: yellowgreen;
+         transition: 0.5s;
+     }
+     .checkbtn{
+         font-size: 30px;
+         color: white;
+         float: right;
+         line-height: 80px;
+         margin-right: 40px;
+         cursor: pointer;
+         display: none;
+     }
+     #check{
+         display: none;
+     }
+     @media(max-width: 952px){
+         label.logo{
+             font-size: 30px;
+             padding-left: 50px;
+         }
+         nav ul li a{
+             font-size: 16px;
+         }
+     }
+
+
+     @media(max-width: 858px){
+         .checkbtn{
+             display: block;
+         }
+         ul{
+             position: fixed;
+             width: 100%;
+             height: 100vh;
+             background-color: aqua;
+             top:80px;
+             left: 0;
+             text-align: center;
+             transition: all 0.5s;
+
+         }
+         nav ul li{
+             display: block;
+             margin: 50px 0;
+             line-height: 30px;
+             
+         }
+         nav ul li a{
+             font-size: 20px;
+             margin: 50px 0;
+             line-height: 30px;
+
+         }
+         a:hover,a.active{
+             background: darkgreen;
+             color: white;
+             width:100%;
+         }
+         #check:checked ~ ul{
+             left: 0;
+         }
+
+     }
+     
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Lakshmi</label>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT ME</a></li>
+            <li><a href="#">SKILLS</a></li>
+            <li><a href="#">EXPERIENCE</a></li>
+            <li><a href="#">CONTACT-US</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="home-text">
+                <h1>Hi,I'am <span>Lakshmi H N</span></h1>
+                <h2>Web Developer</h2>
+                <p>I am a Self-starter to adapt and evangelise new technologies. i have a passion for software development with a diverse skillset ranging from the full stack to a stronghold on data structures and algorithms. i like to tackle complex challenges head-on to deliver technically sound solutions with optium efficiency.</p>
+               <a href="#" class="btn">Contact Me</a>
+              </div>
+        </div>
+
+        <div>
+            
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+         
+
+
+       
+
+        
+        
+       
+       
+   
+
+    
+</head>
+<style>
+    span{
+        font-size: 30px;
+    }
+</style>
+
+<body>
+   <form onsubmit="validate()">
+    <input type="text" placeholder="type your email address" id="email-input">
+    <span id="input-info"></span><br><br>
+    <button type="submit">Submit</button>
+   
+    <script>
+        function validate(){
+        let emailInput = document.getElementById("email-input").value
+
+        let indexOfa = emailInput.indexOf('@')
+        let inputInfoDisplay=""
+
+        inputInfoDisplay.style.color='red'
+
+       
+        if(emailInput.indexOf('@')===-1)
+        inputInfo= "email not valid - @ missing"
+        else if(emailInput.indexOf('@')<1)
+
+       inputinfo ="email not valid- atleast one charcter required before @ symbol" 
+
+        else if(emailInput.length-emailInput.lastIndexOf('.')<=2)
+        inputInfo="email not valid-after dot, there should be atleast 2 charcter!"
+
+        else if(emailInput.indexOf(' ')!=-1)
+        inputInfo='email not valid- cannot contain space'
+
+        else if(emailInput[indexOfa-1] === '.'|| emailInput[indexOfa-1]==='-'|| emailInput[indexOfa-1] === '_')
+        inputInfo='email not valid - atleast one character after these . - _'
+
+        else if(emailInput.charCodeAt(0)<97||emailInput.charCodeAt(0)>122)
+        inputInfo='email not valid-not special charactes as a  first character'
+        else{
+            inputInfo="valid email address"
+            inputInfoDisplay.style.color="green"
+        }
+        inputInfoDisplay.innerText = inputInfo
+
+        }
+
+        </script>
+
+
+
+    
+</body>
+</html>

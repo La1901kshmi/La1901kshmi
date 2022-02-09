@@ -12,3 +12,85 @@ h1 {
     font-weight: normal;
     padding-bottom: 10px;
   }
+  #menu-icon{
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 768px){
+    #menu-icon{
+        display: initial;
+        color: black;
+    }
+    header .navbar{
+    position: absolute;
+    top:100%;
+    left:0;
+    right:0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: var(--bg-color);
+    clip-path: polygon(0 0,100% 0, 100% 0,0 0);
+    transition: 0.5s ease;
+}
+header .navbar .active{
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+}
+.navbar a{
+
+    margin: 1rem;
+    padding:1.5rem;
+    display: block;
+    background: white;
+    border-left: 4px solid black;
+}
+}
+.home{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  background: url(C:\Users\dell\Pictures\image0.jfif) no-repeat;
+  background-size: cover;
+  background-position: right center;
+}
+
+.home-text{
+  max-width: 500px;
+  
+}
+.home-text h1{
+  font-size: var(--h1-font);
+  letter-spacing: var(--spacing);
+}
+.home text span{
+  color: var(--primary);
+
+}
+.home-text h2{
+  font-size: var(--h2-font);
+  margin: var(--m-1) 0;
+  letter-spacing: var(--spacing);
+}
+.home-text p{
+  font-size: var(--p-font);
+  margin-bottom: var(--m-4);
+  line-height: 22px;
+  max-width: 71%;
+}
+.btn{
+  padding: 10px 23px;
+  background: var(--primary);
+  color: #fff;
+}
+.btn:hover{
+  background: var(--hover);
+}
+
+
+

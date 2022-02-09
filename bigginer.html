@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #heading1{
+          font-size: 30px;
+          color: #fff;
+          text-shadow: 2px 2px blue;
+      }
+      .button{
+          background: greenyellow;
+          color: #fff;
+          width: 50%;
+          height: 40%;
+          border-radius: 50%;
+
+      }
+      button:hover{
+          background-color: green;
+          width: 70%;
+          font-size: 35px;
+
+      }
+    </style>
+</head>
+<body>
+    <h1 id="heading1">hello i am lakshmi</h1>
+    <button class="button" onclick="changeColor()">change</button>
+    <script>
+
+      
+        const colors=['red','blue','green','yellow','purple','pink','red']
+
+        function changeColor(){
+            const colorIndex=parseInt(Math.random()*colors.length)
+           // document.body.style.background=colors[colorIndex]
+        h1.style.colors=colors[colorIndex]
+
+        }
+        
+        </script>
+</body>
+</html>

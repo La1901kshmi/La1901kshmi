@@ -1,0 +1,36 @@
+body{
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.5;
+    background-color: lightpink;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button{
+    border-radius: 40%;
+    background-color: lime;
+    color: mediumblue;
+    border:none;
+    cursor: pointer;
+    width: 90px;
+    height: 60px;
+    font-size: 25px;
+    margin: 25px
+
+}
+#winner{
+    color: green;
+
+}
+#loser{
+    color:red;
+}
+.results{
+    font-weight: bold;
+}
+.box{
+    position: relative;
+    border-radius: 50%;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}

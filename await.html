@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const executeOrder=function(){
+ return new Promise(function(resolve,reject){
+  console.log('order placed')
+  setTimeout(function(){
+    console.log("order received")
+    console.log('chef started preparing')
+    resolve()
+},2000)
+})
+}
+
+const pizzacheezeadded=()=>{
+ return  new Promise(function(resolve,reject){
+    setTimeout(function(){
+    console.log('pizza cheeze added')
+    resolve()
+    },5000)
+  })
+}
+const firstlayercheezeadded=()=>{
+  return new Promise(function(resolve,reject){
+    setTimeout(function(){
+    console.log('first layer of cheeze added')
+    resolve()
+    },4000)
+  })
+}
+
+
+const toppingadded=()=>{
+  return new Promise(function(resolve,reject){
+    setTimeout(function(){
+    console.log('topping added')
+    resolve()
+    },2000)
+  })
+}
+
+const finallayer=()=>{
+return  new Promise(function(resolve,reject){
+    setTimeout(function(){
+    console.log('final layer added')
+    resolve()
+    },6000)
+  })
+}
+
+const pizzbaked=()=>{
+ return  new Promise(function(resolve,reject){
+  setTimeout(function(){
+  console.log('pizza baked')
+  resolve()
+},4000)
+  })
+}
+
+const organoadded=()=>{
+ return new Promise(function(resolve,reject){
+    setTimeout(function(){
+    console.log('organ added and packed')
+    resolve()
+},4000)
+})
+} 
+
+const processOrder=async()=>{
+await executeOrder()
+await pizzacheezeadded()
+await firstlayercheezeadded()
+await toppingadded()
+ await finallayer()
+ await pizzbaked()
+ await organoadded()
+
+  console.log('the order is ready and handed over the zomato guy')
+  
+
+ 
+}
+
+processOrder()
+
+
+    </script>
+    
+</body>
+</html>

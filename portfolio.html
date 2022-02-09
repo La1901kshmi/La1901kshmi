@@ -2,28 +2,65 @@
 
 <head>
     <title>portfolio page</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="portfolio1.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@100&family=Roboto:wght@100&family=Sacramento&display=swap" rel="stylesheet">
 
 
 </head>
 
 <body>
-    <div class="top-container">
-        <img class="top-cloud" src="C:\Users\dell\Documents\html file\project1\cloud.png" alt="cloud">
-        <div class="title-text">
-          <h1>I'm Lakshmi</h1>
-          <h2>a <span class="pro">program</span>mer.</h2>
-        </div>
-        <img class="bottom-cloud" src="C:\Users\dell\Documents\html file\project1\cloud.png" alt="cloud">
-        <img src="C:\Users\dell\Documents\html file\project1/mountain.png" alt="mountain-img">
-      </div>
+    
     <!----<i class="fab fa-linkedin"></i>
     <i class="fab fa-github"></i>
     
     <iframe src="https://giphy.com/embed/l41lHDSvmwnQGDUD6" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
    <p><a href="https://giphy.com/gifs/tunnel-particles-swirl-l41lHDSvmwnQGDUD6"></a></p> --->
+    <header>
+      <a href="#" class="logo">Lakshmi</a>
+      <div id="menu-icon" class="fas fa-bars"><div>
+      <ul class="navbar">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SKILLS</a></li>
+        <li><a href="#">HOBBIES</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+    
+  </header>
+
+
+  <section class="home" id="home">
+    <div class="home-text">
+      <h1>Hi,I'am <span>Lakshmi H N</span></h1>
+      <h2>Web Developer</h2>
+      <p>I am a Self-starter to adapt and evangelise new technologies. i have a passion for software development with a diverse skillset ranging from the full stack to a stronghold on data structures and algorithms. i like to tackle complex challenges head-on to deliver technically sound solutions with optium efficiency.</p>
+     <a href="#" class="btn">Contact Me</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="">
+      
+    </div>
+     
+    
+  </section>
+   <script>
+     let menu=document.querySelector("#menu-icon")
+     let navbar=document.querySelector(".navbar")
+     menu.onclick = () => {
+       menu.classList.toggle('fa-times')
+       navbar.classList.toggle('active')
+     }
+
+     window.onscroll=()=>{
+      menu.classList.remove('fa-times')
+       navbar.classList.remove('active')
+     }
+   </script>
 </body>
 
 </html>

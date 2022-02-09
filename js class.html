@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+     class Student{
+         constructor(name,course,batch,teckstack,marks1,marks2){
+             this.name=name
+             this.course=course
+             this.batch=batch
+             this.teckstack=teckstack
+             this.marks1=marks1
+             this.marks2=marks2
+         }
+     
+   
+
+     showResult()
+     {
+         if(this.marks1>35)
+         console.log(this.name+ "has passed in this sub1")
+         else
+         console.log(this.name+ "has failed in this sub1")
+         if(this.marks2>35)
+         console.log(this.name+ "has passed in this sub2")
+         else
+         console.log(this.name+ "has failed in this sub2")
+     }
+    }
+
+     let amber= new Student('amber','course1','batch11','teckstack',34,89)
+     let jyothi= new Student('jyothi','course1','batch11','teckstack',78,89)
+
+      amber.showResult()
+      jyothi.showResult()
+    </script>
+</body>
+</html>

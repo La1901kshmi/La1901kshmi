@@ -1,0 +1,226 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <script src="https://kit.fontawesome.com/2c6133bcaa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="rock.css">
+    <title>Game</title>
+</head>
+<body>
+    <div class="text-center mt-3">
+        <h1>WELCOME TO ROCK PAPER SCISSORS GAME!</h1>
+        
+    </div>
+
+    <div id="message" class="text-center h5">
+
+    </div>
+
+    <div class="text-center m-5" id="start">
+        <input type="submit" id="submit" class="btn btn-dark" value="Get Started!">
+    </div>
+
+    <div class="boards" id="boards">
+        <div class="row">
+            <div class="col-6 text-center">
+                <h1 class="text-center my-3">Player1</h1>
+                <div id="playerSide">
+                    <h3 id="playerScore"></h3>
+                    <div id="playerSelect"></div>
+                </div>
+            </div>
+
+            <div class="col-6 text-center p-0">
+                <h1 class="text-center my-3">Player1</h1>
+                <div id="computerSide">
+                    <h3 id="computerScore"></h3>
+                    <div id="computerSelect"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="select" class="text-center w-50 mx-auto select">
+        <div class="row">
+            <div id="rock" class="col-4">
+                <i class="fas fa-hand-rock"></i>
+            </div>
+            <div id="paper" class="col-4">
+                <i class="fas fa-hand-paper"></i>
+            </div>
+            <div id="scissors" class="col-4">
+                <i class="fas fa-hand-scissors"></i>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const pScore=document.getElementById("playerScore")
+        const cScore=document.getElementById("computerScore")
+        const playerSelect=document.getElementById("playerSelect")
+        const comSelect=document.getElementById("computerSelect")
+
+        const message=document.getElementById("message")
+        const submit=document.getElementById("submit")
+
+        const rock=document.getElementById("rock")
+        const paper=document.getElementById("paper")
+        const scissors=document.getElementById("scissors")
+
+        let playerScore=0
+        let computerScore=0
+
+        let gameActive=false
+
+        function displayBoards(){
+
+            const start=document.getElementById("start")
+            const boards=document.getElementById("boards")
+            const select=document.getElementById("select")
+
+            start.style.display='none'
+
+            boards.style.display='block'
+            select.style.display='block'
+            gameActive=true
+
+        }
+
+        function gameFlow(playerSelection){
+           const winnerObject=getMeWinner(playerSelection)
+           const result=winnerObject.winner
+           const{compMove:computerMove}=winnerObject
+
+           displaySelection('player',playerSelection,result)
+           displaySelection('computer',computerMove,result)
+
+           scoreBoard(result)
+           message.innerText=result
+
+           whoWon()
+        }
+
+        function displaySelection(whoIsPlaying,selection,result){
+            if(whoIsPlaying==='player'){
+                playerSelect.innerHTML=`<i class="fas fa-hand-${selection}"</i>`
+                if(result==='Player won!'){
+                    playerSelect.style.color='green'
+                    compSelect.style.color='red'
+                }
+            }
+            else{
+                compSelect.innerHTML=`<i class="fas fa-hand-${selection}"></i>`
+
+                if(result==="Computer won!"){
+                    playerSelect.style.color='red'
+                    comSelect.style.color='green'
+                }
+            }
+            if(result==='Draw!'){
+                comSelect.style.color=""
+                playerSelect.style.color=""
+            }
+        }
+
+        function scoreBoard(result){
+            if(result==='Player won!'){
+                playerScore++
+                pScore.innerText=playerScore
+                cScore.innerText=computerScore
+            }
+            else if(result==='Computer won!'){
+                computerScore++
+                pScore.innerText=playerScore
+                cScore.innerText=computerScore
+            }else{
+                return false
+            }
+        }
+
+        function computerPlay(){
+            let arr=['rock','paper','scissors']
+            let random=arr[Math.floor(Math.random()*arr.length)]
+            return random
+        }
+
+        function playRounds(ps,cs){
+            if(ps===cs){
+                return 0
+            }
+            else if(ps=="rock" && cs=='scissors'){
+                return 1
+            } else if(ps=="rock" && cs=="paper"){
+                return -1
+            } else if(ps=="paper" && cs=="scissors"){
+                return -1
+            } else if(ps=="paper" && cs=="rock"){
+                return 1
+            }else if(ps=="scissors" && cs=="rock"){
+                return -1
+            }else if(ps=="scissors" && cs=="paper"){
+                return 1
+            }
+        }
+
+        function geMeWinner(playerSelection){
+            let computerSelection=computerPlay()
+            let winner=playRound(playerSelection,computerSelection)
+            winner=winner===0?'Draw!':(winner===1?'Player won!':'Computer won!')
+           
+
+            return({
+                winner: winner,
+                compMove: computerSelection
+            })
+        }
+
+          function gameFinished(){
+              if(playerScore===5||computerScore===5){
+                  return true
+              }
+              return false
+          }
+
+          function whoWon(){
+              if(gameFinished()){
+                  if(playerScore===5){
+                      message.innerText='Player is the winner! Congratulations!'
+                  }else{
+                      message.innerText='Computer is the winner! You Lose!'
+                  }
+                  reset()
+              }
+          }
+
+          function reset(){
+              setTimeout(function(){
+                  playerScore=0
+                  computerScore=0
+                  compSelect.innerHTML=""
+                  playerSelect.innerHTML=""
+                  pScore.innerText=0
+                  cScore.innerText=0
+                  gameActive=false
+                  message.innerText="Choose rock,paper,or scissors to play again"
+              },3000)
+          }
+
+          submit.addEventListener("click",displayBoards)
+
+          rock.addEventListener("click",gameFlow.bind(this,rock.id))
+          paper.addEventListener("click",()=>gameFlow(paper.id))
+          scissors.addEventListener("click",()=>gameFlow(scissors.id))
+
+
+
+        
+
+      </script>
+    
+</body>
+</html>

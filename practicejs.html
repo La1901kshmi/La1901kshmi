@@ -99,7 +99,7 @@ const organoadded=()=>{
 })
 } 
 
-//executeOrder() 
+executeOrder() 
 .then(pizzacheezeadded)
 .then(firstlayercheezeadded)
 .then(toppingadded)
@@ -109,7 +109,7 @@ const organoadded=()=>{
  .then(function(){
   console.log('the order is ready and handed over the zomato guy')
   
-})*/
+})
 
 
 
@@ -277,7 +277,7 @@ const organoadded=()=>{
 
 
 
-      let students = [
+    /*  let students = [
       {
         name: 'John',
         batch: 'Batch 11',
@@ -322,7 +322,7 @@ const organoadded=()=>{
           social:'63'
         }
       }
-    ]
+    ]*/
    /* let studentsTotalMarks=students.map((student)=>{
     for(subject in student.marks){
     let greaterthan30marksinallsubj=students.filter(function(subject){
@@ -334,18 +334,25 @@ const organoadded=()=>{
   
       
     
-   let studentsTotalMarks=students.map((student)=>{
-      
-     
-         for(marks in student.marks){
-         if(Number(student.marks)>30){
+  /* let step1=students.map(student=>{
+     let{english,maths,science,hindi,social}=student.marks
+         if(Number(english)>30 && Number(maths)>30 && Number(science)>30 && Number(hindi)>30 && Number(social)>30){
            return student
          }
         
-      }
-   })
+      })
+   let studentNameWhohavePassed=step1.filter(student=>student)
+   console.log(studentNameWhohavePassed)*/
+
+   /*let studentNameWhohavePassed=[]
+   students.forEach((student)=>{
+     let marks=Object.values(student.marks)
    
-   console.log(studentsTotalMarks)
+   if(marks.every((singlesubjectmarks) =>  singlesubjectmarks>30))
+     studentNameWhohavePassed.push(student.name)
+
+   })
+   console.log(studentNameWhohavePassed)*/
   
 
 
@@ -398,6 +405,44 @@ const organoadded=()=>{
   Promise.any([promise1,promise2,promise3]).then((resolvedmessage) => {
     console.log('some of the promises resolved',resolvedmessage)
   })*/
+
+
+async function abc(){
+
+await new Promise(function(resolve,reject){
+    setTimeout(function(){
+      resolve()
+    },4000)
+    })
+    console.log('which was resolved after 4s')
+    return 'promise returned from function abc()'
+  }
+
+  
+
+    async function display(){
+      let result = await abc()
+       console.log('resolved message',result)
+     
+    
+  }
+display()
+//console.log(abc())
+   /* async function display(){
+      try{
+        let resolvedmessage=await promise1
+        console.log('promise 1  resolved',resolvedmessage )
+      }
+      catch(rejectedmessage){
+        console.log('promise 1 rejected',rejectedmessage)
+
+      }
+    }
+    display()*/
+
+
+
+   
  
 
     </script>
