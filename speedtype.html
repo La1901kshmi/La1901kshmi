@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{  
+            box-sizing: border-box;
+        
+        }
+        body{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           min-height: 100vh;
+           margin: 0;
+           background-color: purple;
+        }
+        body, .quote-input{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+        .container{
+            
+            background-color: yellow;
+            padding: 1rem;
+            border-radius: 4px;
+            width: 700px;
+            max-width: 90%;
+           
+        }
+        .timer{
+            position: absolute;
+            top: 3rem;
+            font-size: 3rem;
+            color: aqua;
+            font-weight: bold;
+            text-shadow: 2px 2px palevioletred;
+        }
+        .quote-display{
+            margin-bottom: 1rem;
+            margin-left: calc( 1rem + 2px);
+            margin-right: calc(-1rem + 2px);
+            padding: 14px;
+        }
+        .quote-input{
+            background-color: transparent;
+            border:2px solid black;
+            outline: none;
+            width:100%;
+            height: 8rem;
+            margin: auto;
+            resize: none;
+            padding: .5rem 1rem;
+            font-size: 1rem;
+            border-radius: .5rem;
+
+        }
+        .quote-input:focus{
+            border-color: green;
+        }
+
+        .correct{
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect{
+            color:red;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="timer" id="timer"></div>
+    <div class="container">
+        <div class="quote-display" id="quoteDisplay"></div>
+         <textarea id="quoteInput" class="quote-input" autofocus></textarea>
+        </div>
+     <script> 
+      
+      const RANDOM_QUOTE_API_URL= 'https://api.quotable.io/random';
+      const quoteDisplayElement=document.getElementById('quoteDisplay')
+      const quoteInputElement=document.getElementById("quoteInput")
+      const timerElement=document.getElementById("timer")
+
+      quoteInputElement.addEventListener('input',() => {
+         const arrayQuote = quoteDisplayElement.querySelectorAll('span')
+         const arrayValue=quoteInputElement.value.split('')
+
+         let incorrect=true
+         arrayQuote.forEach((characterSpan,index)=>{
+             const character = arrayValue[index]
+             if(character == null){
+                 characterSpan.classList.remove('correct')
+                 characterSpan.classList.remove('incorrect')
+                 incorrect=false
+             }
+            else if(character===characterSpan.innerText){
+                 characterSpan.classList.add('correct')
+                 characterSpan.classList.remove('incorrect')
+             }
+             else{
+                characterSpan.classList.remove('correct')
+                 characterSpan.classList.add('incorrect')
+                 correct=false
+             }
+         })
+         if(incorrect) renderNewQuote()
+      })
+
+
+      function getRandomQuote(){
+        return fetch(RANDOM_QUOTE_API_URL)
+          .then(response => response.json())
+          .then(data => data.content)
+      }
+
+     async function renderNewQuote(){
+         const quote = await getRandomQuote()
+         quoteDisplayElement.innerHTML=''
+        
+         quote.split('').forEach(character => {
+             const characterSpan=document.createElement('span')
+            
+             characterSpan.innerText=character
+             quoteDisplayElement.appendChild(characterSpan)
+             
+         })
+         quoteInputElement.value=null
+         startTimer()
+      }
+
+      let startTime
+      function startTimer(){
+          timerElement.innerText=0
+          startTime=new Date()
+          setInterval(() =>{
+              timer.innerText = getTimerTime()
+          },1000)
+      }
+
+      function getTimerTime(){
+          return Math.floor((new Date() - startTime)/1000)
+      }
+
+      renderNewQuote()
+    
+
+         </script>
+</body>
+</html>
