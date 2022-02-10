@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+         box-sizing: border-box;
+         padding: 0;
+         margin: 0;
+       }
+       body{
+           background-color: palegreen;
+
+       }
+       .app{
+          display: flex;
+           width: 100vw;
+           height: 100vh;
+           flex-flow: column;
+       }
+       header{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 60px;
+           margin-top: 15px;
+           color: red;
+           text-shadow: 2px 2px yellow;
+       }
+       .lists{
+           display: flex;
+           flex: 1;
+           width: 100%;
+           overflow-x: scroll;
+           margin-top: 20px;
+       }
+       .lists .list{
+        
+           display: flex;
+           flex-flow: column;
+           flex: 1;
+           width: 100%;
+           min-width: 250px;
+           max-width: 350px;
+           height: 70%;
+           min-height: 150px;
+           background-color: rgba(0,0,0,0.1);
+           margin: 0 15px;
+           padding: 8px;
+           transition: all 0.2s linear;
+       }
+       .lists .list .list-item{
+           background-color: pink;
+           border-radius: 5px;
+           padding: 15px 20px;
+           text-align: center;
+           margin: 4px 0px;
+           font-size: 18px;
+           font-weight: bold;
+       }
+    </style>
+</head>
+<body>
+
+    <div class="app">
+        <header><h1>DRAG n DROP :-</h1></header>
+        <div class="lists">
+            <div class="list">
+                <div class="list-item" draggable="true">list item 1</div>
+                <div class="list-item" draggable="true">list item 5</div>
+                <div class="list-item" draggable="true">list item 6</div>
+            </div>
+            <div class="list">
+            </div> 
+            <div class="list">
+                <div class="list-item" draggable="true">list item 3</div>
+            </div>
+            <div class="list">
+                <div class="list-item" draggable="true">list item 4</div>
+            </div>
+        </div>
+        
+    </div> 
+    <script>
+        const list_items=document.querySelectorAll('.list-item')
+        const lists=document.querySelectorAll('.list')
+
+        let draggedItem=null
+
+        for(let i=0;i<list_items.length;i++){
+            const item = list_items[i]
+        
+
+        item.addEventListener('dragstart',function(){
+            draggedItem=item
+            setTimeout(function(){
+                item.style.color='red'
+              
+            },0)
+        })
+
+        item.addEventListener('dragend',function(){
+            setTimeout(function (){
+            draggedItem.style.display='block'
+            draggedItem=null
+            },)
+        })
+
+        for(let j=0;j<lists.length;j++){
+            const list=lists[j]
+
+            list.addEventListener('dragover',function(e){
+                e.preventDefault()
+                item.style.backgroundColor='orange'
+                body.style.backgroundColor="black"
+                
+            })
+
+            list.addEventListener('dragenter',function(e){
+                e.preventDefault()
+                this.style.backgroundColor='rgba(0,0,0,0.2)'
+                
+            })
+
+            list.addEventListener('dragleave',function(e){
+                this.style.backgroundColor='rgba(0,0,0,0.1)'
+                
+            })
+
+            list.addEventListener('drop',function(e){
+                console.log('drop')
+               
+                this.append(draggedItem)
+                this.style.backgroundColor='rgba(0,0,0,0.1)'
+               
+            })
+
+        }
+        }
+        
+
+
+
+        </script>
+</body>
+</html>
