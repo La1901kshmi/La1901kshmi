@@ -49,12 +49,15 @@ header{
 }
 .navbar{
     display: flex;
+    background-color: #fff;
 }
 .navbar a{
     font-size: 1rem;
     padding: 10px 20px;
-    color: gray;
+    color: palevioletred;
     font-weight: 500;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
 header .navbar a:hover{
@@ -80,32 +83,184 @@ header .navbar a:hover{
     
   }
   .home-text h1{
-    font-size: var(--h1-font);
+    font-size: 25px;
     letter-spacing: var(--spacing);
+    font-weight: bold;
   }
   .home text span{
     color: var(--primary);
   
   }
   .home-text h2{
-    font-size: var(--h2-font);
+    font-size: 30px;
     margin: var(--m-1) 0;
     letter-spacing: var(--spacing);
-  }
-  .home-text p{
-    font-size: var(--p-font);
-    margin-bottom: var(--m-4);
-    line-height: 22px;
-    max-width: 71%;
-  }
-  .btn{
-    padding: 10px 23px;
-    background: var(--primary);
-    color: #fff;
-  }
-  .btn:hover{
-    background: var(--hover);
+    font-weight: bold;
+    margin-bottom: 20px;
   }
   
+  .btn{
+    padding: 10px 20px;
+    background: green;
+    color: #fff;
+    margin-top: 50px;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .btn:hover{
+    background: lightgreen
+  }
+  @media (max-width: 768px){
+    #menu-icon{
+        display: initial;
+        color: black;
+    }
+    header .navbar{
+    position: absolute;
+    top:100%;
+    left:0;
+    right:0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: var(--bg-color);
+    clip-path: polygon(0 0,100% 0, 100% 0,0 0);
+    transition: 0.5s ease;
+}
+  }
+ img{
+   margin-left: 450px;
+   border-radius: 4px;
+   
+ }
+.about{
+  text-align: center;
+  color: aqua;
+  font-weight: bold;
+  font-size: 35px;
+  padding-bottom: 40px;
+}
+.desc{
+  text-align: center;
+  color: greenyellow;
+  width:500px;
+  width: 100%;
+  padding: 20px;
+  text-transform: capitalize;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 20px;
+  line-height: 35px;
+
+
+
+}
+.skill1{
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: darkorchid ;
+  text-shadow: 2px 2px yellowgreen;
+
+}
+h3{
+  margin: 5px;
+}
+.skill{
+  width: 500px;
+  margin: 60px auto;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.skill li{
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.bar{
+  background: #353b48;
+  display: block;
+  height: 14px;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.22);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+}
+
+.bar:hover{
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+}
+.bar span{
+  height: 20px;
+  float: left;
+  background: lightgreen
+}
+.html{
+  width:90%;
+  animation: html 2s;
+}
+.css{
+  width:70%;
+  animation: css 2s;
+}
+.bootstrap{
+  width:65%;
+  animation: bootstrap 2s;
+}
+.javascript{
+  width:65%;
+  animation: javascript 2s;
+}
+.java{
+  width:60%;
+  animation: java 2s;
+}
+
+@keyframes html{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 90%;
+  }
+}
+@keyframes css{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 70%;
+  }
+}
+@keyframes bootstrap{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 70%;
+  }
+}
+@keyframes javascript{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 65%;
+  }
+}
+@keyframes java{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 60%;
+  }
+}
+
+
+
 
 
