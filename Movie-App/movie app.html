@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE APP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+    <style>
+      body{
+        margin: 0 auto;
+        box-sizing: borderbox;
+      }
+    
+      
+    .navbar{
+      width: 100%;
+      height: 140px;
+      background-color: blue;
+      
+      display: fixed;
+    
+    }
+    h2{
+      color: white;
+      padding-left: 50px;
+      padding-top: 19px;
+      font-weight: 50px;
+      
+    }
+    .input{
+     
+      padding-top: 5px;
+      margin-left: 17px;
+      padding-bottom: 30px;
+     
+      outline: none;
+      border: 1px solid grey;
+      font-size: 15px;
+      padding: 10px 10px;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+      padding-left: 90px;
+      border-style: groove;
+      border-color: aqua;
+
+      
+
+
+    }
+    .search{
+      color: white;
+      font-size: 19px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: orange;
+      padding: 2px;
+      border: none;
+
+
+      border-radius: 2px;
+      width: 80px;
+      cursor: pointer;
+    }
+
+    .search:hover{
+        background: lightgreen;
+     }
+    .card-container{
+       
+           display: flex;
+            justify-content: space-evenly;
+           align-items: center;
+           background-color: skyblue;
+           flex-wrap: wrap;
+           display:fixed;
+     }
+      .card{
+        margin-top: 5px;
+        border: 1px solid green;;
+        width: 300px;
+        height: 310px;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px gray;
+      }
+      .card:hover{
+        border: 3px solid Orange;
+      }
+      .pagination{
+        width: 100%;
+        height: 60px;
+        background-color: brown;
+        display:flex;
+        justify-content: center;
+        text-align: center;
+        color:black;
+        float: left;
+        padding:8px 16px;
+       text-decoration: none;
+      }
+
+      @media(max-width:340px)
+      {
+        .input{
+          float: left;
+          position: fixed;
+          padding-top: 0px;
+         
+        }
+        .search{
+         float: right;  
+
+
+        }
+      }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <h2> MOVIE DATABASE </h2>
+    <input type="text" class="input"  id="place" onfocus="voice()" onchange="movieapp()">
+    <button type="submit"  class="search" onclick="movieapp()">Search</button><br><br>
+  </div>
+  
+   
+ <!---- <div class="navbar">
+  <input type="text" class="input">
+    <button type="submit" onclick="movieapp()">Search</button><br><br>
+  </div>-->
+    
+    
+    <div class="card-container">
+    </div>
+      
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous" id="prev">
+              <span aria-hidden="true">Previous</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next" id="next">
+              <span aria-hidden="true">Next</span>
+
+            </a>
+           
+          </li>
+        </ul>
+      </nav>
+
+
+
+    
+    <script>
+
+    //  let currPage=0;
+      //let array1=[];
+      //let array2=[];
+
+  function movieapp(){
+  let name=document.querySelector("input")
+  const cardContainer=document.querySelector('.card-container')
+   
+  cardContainer.textContent=''
+    fetch (`http://www.omdbapi.com/?s=${name.value}&apikey=a23405e6`)
+    .then((response) => response.json())
+    // .then(data2 => data2.Search)
+      .then((item) => item.Search)
+      .then((movie) => {
+        //array1=movie;
+        //array2=array1.splice(0,6)
+         movie.map((element)=>{
+
+//const nabar=document.createElement('div')
+          //navbar.appendChild(div)
+
+          const card=document.createElement('div')
+          cardContainer.appendChild(card)
+          card.classList.add('card')
+
+          const Title=document.createElement('h4')
+          card.appendChild(Title).style="color: black; text-shadow:1px 1px red; padding-top:10px;font-size:20px;margin: 0 auto;padding-bottom:5px;"
+          Title.textContent=element.Title
+
+          const poster =document.createElement('img')
+          card.appendChild(poster).style="width: 250px; height: 200px; margin: 10px;margin: 0 auto"
+          poster.src=element.Poster
+
+          const year=document.createElement('p')
+          card.appendChild(year).style="color: green; font-size: 20px; margin: 0 auto;"
+          year.textContent=element.Year
+
+          const imdbLink=document.createElement('a')
+          card.appendChild(imdbLink).style="color: red; font-size: 20px; text-decoration:none;margin: 0 auto"
+          imdbLink.textContent="IMDB"
+          imdbLink.href=`//imdb.com/title/${element.imdbID}`
+       })
+     //  let page=document.getElementById('page').textContent=`Page ${currPage+1} of ${Math.ceil(array1.length/6)}`
+       
+      })
+    }
+
+     /* btnNext.addEventListener("click",()=>{
+        currPage++;
+        if(currPage>Math.ceil(array1.length/6)-1){
+          currPage=0;
+        }
+        const arr2=array1.splice(currPage*6,6)
+        cardContainer=document.querySelector('.card-container')
+        cardContainer.textContent=''
+      })
+          function Previous(){
+        
+          let moviedata=item.length;
+          const numberperPage=6;
+          const currentpage=1;
+          const numberofPage=Math.ceil(moviedata/numberperPage)
+          console.log(numberofPage)
+
+          //  let endingpage=6
+
+            //const display=
+
+
+          }
+
+   
+
+
+
+
+
+
+
+
+        /*  const name=item.Title;
+          const poster=item.Poster;
+          const year=item.Year;
+          const id=item.imdbId;
+          //console.log(poster);
+          const movie=`<li><img src="${poster}"><h2>${name}</h2><p>${year}</p><p>${id}</p></li>`
+          document.querySelector('.movies').innerHTML+=movie;*/
+        
+
+      // function voice(){
+      //     var recognition=new webkitSpeechRecognition();
+      //     recognition.lang="en-GB";
+      //     recognition.onresult=function(event){
+      //       console.log(event)
+      //      document.getElementById("place").value=event.results[0][0].transcript
+      //     }
+      //     recognition.start();
+        
+
+      //   }
+      
+
+
+        
+      
+
+        
+      
+
+
+     
+    
+     
+     
+ 
+
+    
+</script>
+    
+</body>
+</html>
